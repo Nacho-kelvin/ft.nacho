@@ -32,73 +32,83 @@
     <nav id="navbar" class="nav glass-nav" aria-label="Main Navigation">
       <div class="container nav-container">
         <a href="#home" class="logo" aria-label="Kelvin Nacho homepage">
-          <span class="logo-initials">KN</span> Kelvin Nacho
+          <span class="logo-initials">KN</span> <span class="logo-text">Kelvin Nacho</span>
         </a>
         <button class="nav-toggle" aria-label="Open Menu" aria-controls="nav-links" aria-expanded="false">
-          <span></span><span></span><span></span>
+          <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
         </button>
         <ul class="nav-links" id="nav-links">
-          <li><a href="#home" aria-current="page">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#testimonials">Testimonials</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#home" aria-current="page" tabindex="0">Home</a></li>
+          <li><a href="#about" tabindex="0">About</a></li>
+          <li><a href="#skills" tabindex="0">Skills</a></li>
+          <li><a href="#services" tabindex="0">Services</a></li>
+          <li><a href="#projects" tabindex="0">Projects</a></li>
+          <li><a href="#testimonials" tabindex="0">Testimonials</a></li>
+          <li><a href="#contact" tabindex="0">Contact</a></li>
         </ul>
       </div>
     </nav>
   </header>
 
   <!-- HERO SECTION -->
-  <section id="home" class="hero cool-gradient-bg">
-    <div class="hero-decor"></div>
+  <section id="home" class="hero cool-gradient-bg" aria-label="Homepage hero, intro to Kelvin Nacho">
+    <div class="hero-decor" aria-hidden="true"></div>
     <div class="container hero-flex">
       <div class="hero-content">
         <h1>
           Hi, I'm <span class="highlight">Kelvin Nacho</span>
-          <span class="waving-hand" aria-hidden="true">👋</span>
+          <span class="waving-hand" aria-hidden="true" title="Wave">👋</span>
         </h1>
-        <h2 class="subtitle">Full-Stack Developer <span class="pipe">|</span> Modern Web Solutions</h2>
+        <h2 class="subtitle">Full-Stack Developer <span class="pipe" aria-hidden="true">|</span> Modern Web Solutions</h2>
         <p>
-          I build robust, scalable web applications with creativity &amp; problem-solving.
-          <br>
-          Let's elevate your brand with elegant code and design.
+          I build robust, scalable web applications with creativity &amp; problem-solving.<br>
+          <span class="accent-text">Let’s elevate your brand with elegant code and design.</span>
         </p>
-        <div class="cta-buttons">
+        <nav class="cta-buttons" aria-label="Call to action">
           <a href="#projects" class="btn btn-primary"><i class="fa fa-eye"></i> View My Work</a>
           <a href="#contact" class="btn btn-secondary"><i class="fa fa-paper-plane"></i> Contact Me</a>
-        </div>
-        <ul class="quick-social">
-          <li><a href="https://github.com/Nacho-kelvin" aria-label="GitHub"><i class="fab fa-github"></i></a></li>
-          <li><a href="https://www.linkedin.com/in/kelvin-nacho-0b179636a" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
-          <li><a href="https://x.com/NachoKellyy" aria-label="X"><i class="fab fa-x-twitter"></i></a></li>
+        </nav>
+        <ul class="quick-social" aria-label="Social links">
+          <li><a href="https://github.com/Nacho-kelvin" aria-label="GitHub" rel="noopener noreferrer" target="_blank"><i class="fab fa-github"></i></a></li>
+          <li><a href="https://www.linkedin.com/in/kelvin-nacho-0b179636a" aria-label="LinkedIn" rel="noopener noreferrer" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+          <li><a href="https://x.com/NachoKellyy" aria-label="X/Twitter" rel="noopener noreferrer" target="_blank"><i class="fab fa-x-twitter"></i></a></li>
         </ul>
       </div>
       <figure class="hero-image">
-        <div class="glow-circle"></div>
-        <img src="Image/profile.jpeg" alt="Portrait photograph of Kelvin Nacho" width="280" height="280" class="prof-img" loading="lazy">
+        <div class="glow-circle" aria-hidden="true"></div>
+        <img
+          src="Image/profile.jpeg"
+          alt="Portrait photograph of Kelvin Nacho"
+          width="280" height="280"
+          class="prof-img"
+          loading="lazy"
+        >
       </figure>
     </div>
-    <svg class="section-divider" viewBox="0 0 1440 320"><path fill="#101e36" fill-opacity="1" d="M0,224L1440,32L1440,320L0,320Z"></path></svg>
+    <svg class="section-divider" viewBox="0 0 1440 320" aria-hidden="true">
+      <path fill="#101e36" fill-opacity="1" d="M0,224L1440,32L1440,320L0,320Z"></path>
+    </svg>
   </section>
 
-  <main id="main-content">
+  <main id="main-content" tabindex="-1">
     <!-- ABOUT -->
-    <section id="about" class="section about-dark glass-bg">
+    <section id="about" class="section about-dark glass-bg" aria-label="About Kelvin Nacho">
       <div class="container">
         <h2 class="section-title">About <span class="highlight">Me</span></h2>
         <div class="about-content dual-layout">
           <div class="about-text card-pop">
             <h3>Professional Profile</h3>
             <p>
-              Passionate <b>full-stack engineer</b> (JavaScript, Python, React, APIs) blending scalable backends with sleek user interfaces.<br>
-              <strong>Beyond Coding:</strong> Open-source, mentoring, gaming, and tech adventures.<br>
-              <i>Let's collaborate on something impactful!</i>
+              Passionate <b>full-stack engineer</b> specializing in JavaScript, Python, React, and modern APIs.<br>
+              I blend scalable backends with sleek, accessible user interfaces.
+              <br>
+              <strong>Beyond Coding:</strong> Open-source, mentoring, gaming, and tech adventures.
+              <br>
+              <i>Let’s collaborate on your next impactful project!</i>
             </p>
             <dl class="personal-info">
               <div><dt>Name:</dt><dd>KELVIN NATONIA NACHO</dd></div>
-              <div><dt>Email:</dt><dd><a href="mailto:kelvinnatonia@gmail.com">kelvinnatonia@gmail.com</a></dd></div>
+              <div><dt>Email:</dt><dd><a href="mailto:kelvinnatonia@gmail.com" tabindex="0">kelvinnatonia@gmail.com</a></dd></div>
               <div><dt>From:</dt><dd>Nairobi, Kenya</dd></div>
             </dl>
           </div>
@@ -121,53 +131,53 @@
     </section>
 
     <!-- SKILLS -->
-    <section id="skills" class="section cool-gradient-bg">
+    <section id="skills" class="section cool-gradient-bg" aria-label="Skills Overview">
       <div class="container">
         <h2 class="section-title">My <span class="highlight">Skills</span></h2>
         <div class="skills-container dual-layout">
-          <section class="skill-category card-pop" aria-label="Technical Skills">
-            <h3>Technical</h3>
+          <section class="skill-category card-pop" aria-labelledby="tech-skills">
+            <h3 id="tech-skills">Technical</h3>
             <ul>
               <li>
                 <span>HTML5 / CSS3</span>
-                <div class="bar-wrap"><div class="bar-fill" style="width:95%"></div></div>
+                <div class="bar-wrap"><div class="bar-fill" style="width:95%" aria-label="HTML5 / CSS3 – 95%"></div></div>
               </li>
               <li>
                 <span>Python</span>
-                <div class="bar-wrap"><div class="bar-fill" style="width:90%"></div></div>
+                <div class="bar-wrap"><div class="bar-fill" style="width:90%" aria-label="Python – 90%"></div></div>
               </li>
               <li>
                 <span>JavaScript (ES6+)</span>
-                <div class="bar-wrap"><div class="bar-fill" style="width:90%"></div></div>
+                <div class="bar-wrap"><div class="bar-fill" style="width:90%" aria-label="JavaScript ES6+ – 90%"></div></div>
               </li>
               <li>
                 <span>React.js</span>
-                <div class="bar-wrap"><div class="bar-fill" style="width:85%"></div></div>
+                <div class="bar-wrap"><div class="bar-fill" style="width:85%" aria-label="React.js – 85%"></div></div>
               </li>
               <li>
                 <span>Node.js / Express</span>
-                <div class="bar-wrap"><div class="bar-fill" style="width:85%"></div></div>
+                <div class="bar-wrap"><div class="bar-fill" style="width:85%" aria-label="Node.js / Express – 85%"></div></div>
               </li>
               <li>
                 <span>MongoDB / PostgreSQL</span>
-                <div class="bar-wrap"><div class="bar-fill" style="width:80%"></div></div>
+                <div class="bar-wrap"><div class="bar-fill" style="width:80%" aria-label="MongoDB / PostgreSQL – 80%"></div></div>
               </li>
             </ul>
           </section>
-          <section class="skill-category card-pop" aria-label="Professional Skills">
-            <h3>Professional</h3>
+          <section class="skill-category card-pop" aria-labelledby="prof-skills">
+            <h3 id="prof-skills">Professional</h3>
             <ul>
               <li>
                 <span>Communication</span>
-                <div class="bar-wrap"><div class="bar-fill" style="width:95%"></div></div>
+                <div class="bar-wrap"><div class="bar-fill" style="width:95%" aria-label="Communication – 95%"></div></div>
               </li>
               <li>
                 <span>Teamwork & Collaboration</span>
-                <div class="bar-wrap"><div class="bar-fill" style="width:90%"></div></div>
+                <div class="bar-wrap"><div class="bar-fill" style="width:90%" aria-label="Teamwork & Collaboration – 90%"></div></div>
               </li>
               <li>
                 <span>Problem Solving</span>
-                <div class="bar-wrap"><div class="bar-fill" style="width:90%"></div></div>
+                <div class="bar-wrap"><div class="bar-fill" style="width:90%" aria-label="Problem Solving – 90%"></div></div>
               </li>
             </ul>
           </section>
@@ -176,14 +186,14 @@
     </section>
 
     <!-- SERVICES -->
-    <section id="services" class="section services glass-bg">
+    <section id="services" class="section services glass-bg" aria-label="Professional Offerings">
       <div class="container">
         <h2 class="section-title">My <span class="highlight">Services</span></h2>
         <div class="services-grid">
           <div class="service-card card-pop">
             <i class="fas fa-code fa-2x"></i>
             <h3>Full-Stack Development</h3>
-            <p>Powerful, scalable web apps: from landing pages to complex dashboards and APIs. Built with passion.</p>
+            <p>Powerful, scalable web apps—from landing pages to complex dashboards and APIs.</p>
           </div>
           <div class="service-card card-pop">
             <i class="fas fa-paint-brush fa-2x"></i>
@@ -205,8 +215,10 @@
     </section>
 
     <!-- PROJECTS -->
-    <section id="projects" class="section projects cool-gradient-bg">
-      <svg class="section-divider" viewBox="0 0 1440 320"><path fill="#ffb703" fill-opacity="1" d="M0,160L1440,256L1440,320L0,320Z"></path></svg>
+    <section id="projects" class="section projects cool-gradient-bg" aria-label="Featured Projects">
+      <svg class="section-divider" viewBox="0 0 1440 320" aria-hidden="true">
+        <path fill="#ffb703" fill-opacity="1" d="M0,160L1440,256L1440,320L0,320Z"></path>
+      </svg>
       <div class="container">
         <h2 class="section-title">Featured <span class="highlight">Projects</span></h2>
         <div class="projects-filter" role="tablist" aria-label="Project Filters">
@@ -259,7 +271,7 @@
     </section>
 
     <!-- TESTIMONIALS -->
-    <section id="testimonials" class="section testimonials glass-bg">
+    <section id="testimonials" class="section testimonials glass-bg" aria-label="Testimonials from Clients">
       <div class="container">
         <h2 class="section-title">What <span class="highlight">Clients Say</span></h2>
         <div class="testimonials-grid">
@@ -288,23 +300,23 @@
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="section contact cool-gradient-bg">
+    <section id="contact" class="section contact cool-gradient-bg" aria-label="Contact Kelvin Nacho">
       <div class="container">
         <h2 class="section-title">Get In <span class="highlight">Touch</span></h2>
         <div class="contact-content dual-layout">
           <div class="contact-info card-pop glass-bg">
             <h3>Let’s connect and build something impactful!</h3>
-            <div class="contact-item"><i class="fas fa-envelope"></i> <a href="mailto:kelvinnatonia@gmail.com">kelvinnatonia@gmail.com</a></div>
-            <div class="contact-item"><i class="fas fa-phone"></i> <a href="tel:+254714188409">+254 714 188 409</a> / <a href="tel:+254750455048">+254 750 455 048</a></div>
+            <div class="contact-item"><i class="fas fa-envelope"></i> <a href="mailto:kelvinnatonia@gmail.com" tabindex="0">kelvinnatonia@gmail.com</a></div>
+            <div class="contact-item"><i class="fas fa-phone"></i> <a href="tel:+254714188409" tabindex="0">+254 714 188 409</a> / <a href="tel:+254750455048" tabindex="0">+254 750 455 048</a></div>
             <div class="contact-item"><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</div>
-            <div class="social-links">
-              <a href="https://github.com/Nacho-kelvin" target="_blank"><i class="fab fa-github"></i></a>
-              <a href="https://www.linkedin.com/in/kelvin-nacho-0b179636a" target="_blank"><i class="fab fa-linkedin"></i></a>
-              <a href="https://x.com/NachoKellyy" target="_blank"><i class="fab fa-x-twitter"></i></a>
-              <a href="https://www.instagram.com/n.e.c.h_" target="_blank"><i class="fab fa-instagram"></i></a>
+            <div class="social-links" aria-label="More Social Media Links">
+              <a href="https://github.com/Nacho-kelvin" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/kelvin-nacho-0b179636a" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+              <a href="https://x.com/NachoKellyy" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i></a>
+              <a href="https://www.instagram.com/n.e.c.h_" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
             </div>
           </div>
-          <form class="contact-form card-pop glass-bg" autocomplete="off" name="contact-form">
+          <form class="contact-form card-pop glass-bg" autocomplete="off" name="contact-form" aria-label="Contact form">
             <div class="form-group">
               <input type="text" name="name" placeholder="Your Name" required aria-label="Your Name">
             </div>
@@ -325,7 +337,7 @@
     </section>
 
     <!-- BACK TO TOP -->
-    <button onclick="window.scrollTo({top:0,behavior:'smooth'})" class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+    <button onclick="window.scrollTo({top:0,behavior:'smooth'})" class="back-to-top" aria-label="Back to top" style="display:none"><i class="fas fa-arrow-up"></i></button>
   </main>
 
   <footer class="footer glass-bg" role="contentinfo">
@@ -335,17 +347,21 @@
   </footer>
 
   <script>
+    // --- Footer Year
     document.getElementById('year').textContent = new Date().getFullYear();
-    // Responsive nav
+
+    // --- Responsive nav
     const navToggle = document.querySelector('.nav-toggle');
     const navLinks = document.getElementById('nav-links');
     navToggle?.addEventListener('click', () => {
       const expanded = navToggle.getAttribute('aria-expanded') === 'true' || false;
       navToggle.setAttribute('aria-expanded', !expanded);
       navLinks.classList.toggle('nav-open');
+      // Accessibility: set focus on first nav link when opening menu
+      if (!expanded) navLinks.querySelector('a')?.focus();
     });
 
-    // Filter projects
+    // --- Filter projects
     const filters = document.querySelectorAll('.filter-btn');
     const projectItems = document.querySelectorAll('.project-item');
     filters.forEach(btn => {
@@ -356,8 +372,10 @@
         projectItems.forEach(item => {
           if (filter === "all" || item.dataset.category === filter) {
             item.style.display = "";
+            item.setAttribute('tabindex', '0');
           } else {
             item.style.display = "none";
+            item.setAttribute('tabindex', '-1');
           }
         });
         filters.forEach(b => b.setAttribute('aria-selected', 'false'));
@@ -365,7 +383,7 @@
       });
     });
 
-    // Animated stats for about section
+    // --- Animated stats for about section
     function animateStats() {
       document.querySelectorAll('.number[data-count]').forEach(el => {
         const target = +el.getAttribute('data-count');
@@ -389,7 +407,7 @@
       animateStats();
     }
 
-    // Contact form mock
+    // --- Contact form mock
     document.querySelector('.contact-form')?.addEventListener('submit', function (e) {
       e.preventDefault();
       const status = this.querySelector('.form-status');
@@ -398,7 +416,7 @@
       setTimeout(() => status.textContent = "", 4000);
     });
 
-    // Skip link focus styles
+    // --- Skip link focus styles
     document.querySelector('.skip-link').addEventListener('focus', function(){
       this.classList.add('focus-visible');
     });
@@ -406,7 +424,7 @@
       this.classList.remove('focus-visible');
     });
 
-    // Back-to-top visibility
+    // --- Back-to-top visibility
     const backToTop = document.querySelector('.back-to-top');
     window.addEventListener('scroll', () => {
       if(window.scrollY > 200){
