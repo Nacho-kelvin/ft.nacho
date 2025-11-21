@@ -1,222 +1,172 @@
-// Portfolio Main Script by Nacho Kelvin
-// Improved for professionalism, structure, maintainability, and accessibility
+// Kelvin Nacho Portfolio Main Script - Modern, Interactive, and Accessible
+// @Nacho-kelvin
 
 document.addEventListener('DOMContentLoaded', () => {
-    // === 1. Utilities ===
-    const $ = (selector, ctx = document) => ctx.querySelector(selector);
-    const $$ = (selector, ctx = document) => Array.from(ctx.querySelectorAll(selector));
-    const debounce = (fn, wait = 20) => {
-        let timeout;
-        return (...args) => {
-            clearTimeout(timeout);
-            timeout = setTimeout(() => fn.apply(this, args), wait);
-        };
-    };
-    const isElementInViewport = (el, margin = 0) => {
-        if (!el) return false;
-        const rect = el.getBoundingClientRect();
-        return (
-            rect.top + margin >= 0 &&
-            rect.left >= 0 &&
-            rect.bottom - margin <= (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-        );
-    };
+  // === Utility Shortcuts ===
+  const $ = (s, ctx = document) => ctx.querySelector(s);
+  const $$ = (s, ctx = document) => Array.from(ctx.querySelectorAll(s));
+  const debounce = (fn, t = 24) => { let id; return (...a) => { clearTimeout(id); id = setTimeout(() => fn(...a), t); }; };
 
-    // === 2. Dynamic Footer Year ===
-    const setFooterYear = () => {
-        const yearEl = $('#year');
-        if (yearEl) yearEl.textContent = new Date().getFullYear();
-    };
+  // === Dynamic Year for Footer ===
+  $('#year').textContent = new Date().getFullYear();
 
-    // === 3. Mobile Navigation ===
-    const setupMobileNavigation = () => {
-        const hamburger = $('.hamburger');
-        const navLinks = $('.nav-links');
+  // === Responsive Navigation with Accessibility ===
+  const navToggle = $('.nav-toggle');
+  const navLinks = $('#nav-links');
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', !expanded);
+      navLinks.classList.toggle('nav-open');
+    });
+    $$('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('nav-open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+    document.addEventListener('keyup', e => {
+      if (e.key === 'Escape') {
+        navLinks.classList.remove('nav-open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
 
-        if (hamburger && navLinks) {
-            hamburger.addEventListener('click', () => {
-                hamburger.classList.toggle('active');
-                navLinks.classList.toggle('active');
-                hamburger.setAttribute('aria-expanded', hamburger.classList.contains('active'));
-            });
+  // === Smooth Anchor Scrolling ===
+  $$('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      if (!href || href.length < 2) return;
+      const target = $(href);
+      if (target) {
+        e.preventDefault();
+        const offset = $('#navbar')?.offsetHeight || 0;
+        const top = target.getBoundingClientRect().top + scrollY - offset - 5;
+        window.scrollTo({ top, behavior: 'smooth' });
+        // Accessibility: focus
+        target.setAttribute('tabindex', '-1');
+        target.focus({ preventScroll: true });
+      }
+    });
+  });
 
-            $$('.nav-links a').forEach(link => {
-                link.addEventListener('click', () => {
-                    hamburger.classList.remove('active');
-                    navLinks.classList.remove('active');
-                    hamburger.setAttribute('aria-expanded', 'false');
-                });
-            });
+  // === Project Filter Tabs with Transitions ===
+  const filters = $$('.filter-btn');
+  const projectItems = $$('.project-item');
+  filters.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filters.forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+      const filter = btn.dataset.filter;
+      projectItems.forEach(item => {
+        const match = filter === "all" || item.dataset.category === filter;
+        item.style.display = match ? "block" : "none";
+        item.style.opacity = match ? "1" : "0";
+        item.setAttribute('aria-hidden', match ? 'false' : 'true');
+      });
+    });
+  });
 
-            document.addEventListener('keyup', (e) => {
-                if (e.key === 'Escape') {
-                    hamburger.classList.remove('active');
-                    navLinks.classList.remove('active');
-                    hamburger.setAttribute('aria-expanded', 'false');
-                }
-            });
+  // === Animated About Stats Numbers ===
+  function animateStatNumbers() {
+    $$('.number[data-count]').forEach(el => {
+      if (el.dataset.animated === "1") return;
+      const target = +el.dataset.count;
+      const duration = 1100;
+      let count = 0, step = Math.ceil(target / (duration / 20));
+      const update = () => {
+        count += step;
+        if (count < target) {
+          el.textContent = count;
+          requestAnimationFrame(update);
+        } else {
+          el.textContent = target + "+";
+          el.dataset.animated = "1";
         }
-    };
+      };
+      update();
+    });
+  }
+  // Only animate on large displays & when visible
+  function triggerStatsIfVisible() {
+    if (window.matchMedia("(min-width: 600px)").matches) {
+      const stats = $('#about .number');
+      if (stats && stats.getBoundingClientRect().top < window.innerHeight - 100) {
+        animateStatNumbers();
+      }
+    }
+  }
+  triggerStatsIfVisible();
+  window.addEventListener('scroll', debounce(triggerStatsIfVisible, 60));
 
-    // === 4. Smooth Anchor Scrolling ===
-    const setupSmoothScrolling = () => {
-        $$('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const targetId = this.getAttribute('href').trim();
-                if (targetId.length < 2) return;
-                const targetElement = $(targetId);
-                if (targetElement) {
-                    e.preventDefault();
-                    const navbar = $('#navbar');
-                    const offset = navbar ? navbar.offsetHeight : 0;
-                    const targetTop = targetElement.getBoundingClientRect().top + window.scrollY - offset - 10;
-                    window.scrollTo({ top: targetTop, behavior: 'smooth' });
+  // === Contact Form Handler ===
+  const contactForm = $('.contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', e => {
+      e.preventDefault();
+      const status = contactForm.querySelector('.form-status');
+      status.textContent = "Thank you! Your message was submitted.";
+      contactForm.reset();
+      setTimeout(() => status.textContent = "", 3500);
+    });
+  }
 
-                    // Accessibility: focus target element
-                    targetElement.setAttribute('tabindex', '-1');
-                    targetElement.focus({ preventScroll: true });
-                }
-            });
-        });
-    };
+  // === Skip Link Focus Styling ===
+  const skip = $('.skip-link');
+  skip?.addEventListener('focus', () => skip.classList.add('focus-visible'));
+  skip?.addEventListener('blur', () => skip.classList.remove('focus-visible'));
 
-    // === 5. Sticky Navbar ===
-    const setupStickyNavbar = () => {
-        const navbar = $('#navbar');
-        if (!navbar) return;
+  // === Back-to-top Button (visibility) ===
+  const backToTop = $('.back-to-top');
+  const toggleBackToTop = () => {
+    if (window.scrollY > 200) backToTop.style.display = 'block';
+    else backToTop.style.display = 'none';
+  };
+  window.addEventListener('scroll', debounce(toggleBackToTop, 32));
+  toggleBackToTop();
 
-        const handleNavbarSticky = () => {
-            if (window.scrollY > 100) {
-                navbar.style.background = 'rgba(255,255,255,0.95)';
-                navbar.style.boxShadow = '0 5px 15px rgba(0,0,0,0.08)';
-            } else {
-                navbar.style.background = 'var(--white)';
-                navbar.style.boxShadow = 'none';
-            }
-        };
+  // === Hero & Section Parallax Glow and Section Divider Animation ===
+  // (subtle but cool effect, optional, disables on mobile)
+  function animateHeroDecor() {
+    if (window.innerWidth < 700) return;
+    const decor = $('.hero-decor');
+    const hero = $('#home');
+    if (!decor || !hero) return;
+    document.addEventListener('mousemove', e => {
+      const x = (e.clientX / window.innerWidth - 0.5) * 60;
+      const y = (e.clientY / window.innerHeight - 0.4) * 40;
+      decor.style.transform = `translate(${x}px,${y}px) scale(1.05)`;
+    });
+  }
+  animateHeroDecor();
 
-        window.addEventListener('scroll', debounce(handleNavbarSticky, 20));
-        handleNavbarSticky();
-    };
+  // === Card Pop Animation on Scroll ===
+  function animateCardsOnScroll() {
+    $$('.card-pop').forEach(card => {
+      const rect = card.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 60) {
+        card.classList.add('pop-in');
+      }
+    });
+  }
+  animateCardsOnScroll();
+  window.addEventListener('scroll', debounce(animateCardsOnScroll, 24));
 
-    // === 6. Animate Skill Bars ===
-    const animateSkillBars = (() => {
-        const skillBars = $$('.skill-level');
-        let animated = false;
-
-        return () => {
-            if (animated) return;
-            let allAnimated = true;
-            skillBars.forEach(bar => {
-                const level = bar?.getAttribute('data-level');
-                if (
-                    level &&
-                    isElementInViewport(bar, -40) &&
-                    bar.style.width !== `${level}%`
-                ) {
-                    bar.style.width = `${level}%`;
-                    bar.setAttribute('aria-valuenow', level);
-                }
-                if (bar.style.width !== `${bar.getAttribute('data-level')}%`) {
-                    allAnimated = false;
-                }
-            });
-            if (allAnimated) animated = true;
-        };
-    })();
-
-    // === 7. Animate Stats Counters ===
-    const animateStatsNumbers = (() => {
-        const statNumbers = $$('.number');
-        let statsAnimated = false;
-
-        function animateStatNumber(number) {
-            const target = parseInt(number.getAttribute('data-count'), 10) || 0;
-            const duration = 1200;
-            let start = 0;
-            const step = Math.ceil(target / (duration / 15));
-
-            const update = () => {
-                start += step;
-                if (start < target) {
-                    number.textContent = `${start}`;
-                    requestAnimationFrame(update);
-                } else {
-                    number.textContent = `${target}+`;
-                }
-            };
-            update();
-        }
-
-        return () => {
-            if (statsAnimated) return;
-            let allAnimated = true;
-            statNumbers.forEach(number => {
-                if (isElementInViewport(number, -30) && !number.dataset.animated) {
-                    animateStatNumber(number);
-                    number.dataset.animated = "1";
-                }
-                if (number.dataset.animated !== "1") {
-                    allAnimated = false;
-                }
-            });
-            if (allAnimated) statsAnimated = true;
-        };
-    })();
-
-    // === 8. Project Filter with ARIA support ===
-    const setupProjectFilter = () => {
-        const filterButtons = $$('.filter-btn');
-        const projectItems = $$('.project-item');
-
-        if (filterButtons.length && projectItems.length) {
-            filterButtons.forEach(button => {
-                button.addEventListener('click', function () {
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    this.classList.add('active');
-                    const filterValue = this.getAttribute('data-filter');
-
-                    projectItems.forEach(item => {
-                        const matches = filterValue === 'all' || item.getAttribute('data-category') === filterValue;
-                        item.style.display = matches ? 'block' : 'none';
-                        item.setAttribute('aria-hidden', matches ? 'false' : 'true');
-                    });
-                });
-            });
-        }
-    };
-
-    // === 9. Contact Form Handler ===
-    const setupContactForm = () => {
-        const contactForm = $('.contact-form');
-        if (contactForm) {
-            contactForm.addEventListener('submit', function (e) {
-                e.preventDefault();
-                // In production, send the data to your backend here.
-                alert('Thank you for your message! I will get back to you soon.');
-                this.reset();
-            });
-        }
-    };
-
-    // === 10. Init Section: Modular, Maintainable ===
-    setFooterYear();
-    setupMobileNavigation();
-    setupSmoothScrolling();
-    setupStickyNavbar();
-    setupProjectFilter();
-    setupContactForm();
-
-    // Attach debounced scroll listener for both skill bars and stats
-    const onScroll = debounce(() => {
-        animateSkillBars();
-        animateStatsNumbers();
-    }, 40);
-    window.addEventListener('scroll', onScroll);
-    // Initial animation check (in case in view on load)
-    animateSkillBars();
-    animateStatsNumbers();
-
-    // Optional: Lazy loading images can be handled here as well for further professionalism.
+  // === Glass Nav Style on Scroll ===
+  const navbar = $('#navbar');
+  function glassNav() {
+    if (!navbar) return;
+    if (window.scrollY > 80) {
+      navbar.classList.add('nav-glass-show');
+    } else {
+      navbar.classList.remove('nav-glass-show');
+    }
+  }
+  glassNav();
+  window.addEventListener('scroll', debounce(glassNav, 40));
 });
