@@ -4,8 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kelvin Nacho | Full-Stack Developer Portfolio</title>
-    <meta name="description" content="Portfolio site of Kelvin Nacho, a passionate full-stack web developer based in Nairobi, Kenya. Explore skills, featured projects, and contact info.">
+    <meta name="description" content="Portfolio site of Kelvin Nacho, professional full-stack developer. Explore projects, skills, testimonials, and ways to collaborate or connect.">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Kelvin Nacho | Full-Stack Developer Portfolio">
+    <meta property="og:description" content="Professional portfolio of Kelvin Nacho. Explore skills, testimonials, key projects, and more.">
+    <meta property="og:image" content="Image/og-portrait.jpg">
+    <meta property="og:url" content="https://nacho-kelvin.github.io">
+    <meta property="og:type" content="website">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kelvin Nacho | Full-Stack Developer Portfolio">
+    <meta name="twitter:description" content="Professional portfolio of Kelvin Nacho. Check out featured work, skills, testimonials and get in touch!">
+    <meta name="twitter:image" content="Image/og-portrait.jpg">
+    <!-- Icons -->
+    <link rel="apple-touch-icon" href="favicon-ios.png">
+    <link rel="manifest" href="site.webmanifest">
     <link rel="icon" href="favicon.ico">
+    <!-- Stylesheets -->
     <link rel="preload" href="styles.css" as="style">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
@@ -13,9 +28,10 @@
     <meta name="theme-color" content="#101e36"/>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <!-- Navigation -->
     <header>
-        <nav id="navbar" aria-label="Site Navigation">
+        <nav id="navbar" aria-label="Main Navigation">
             <div class="container">
                 <a href="#home" class="logo" aria-label="Kelvin Nacho homepage">KELVIN NACHO</a>
                 <button class="nav-toggle" aria-label="Open Menu" aria-controls="nav-links" aria-expanded="false">
@@ -24,37 +40,47 @@
                     <span class="hamburger-bar"></span>
                 </button>
                 <ul class="nav-links" id="nav-links">
-                    <li><a href="#home">Home</a></li>
+                    <li><a href="#home" aria-current="page">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#skills">Skills</a></li>
+                    <li><a href="#services">Services</a></li>
                     <li><a href="#projects">Projects</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
         </nav>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Background Gradient and SVG Shape -->
     <section id="home" class="hero" tabindex="-1">
+        <svg viewBox="0 0 1440 320" class="section-divider" aria-hidden="true">
+            <path fill="#101e36" fill-opacity="1" d="M0,224L1440,32L1440,320L0,320Z"></path>
+        </svg>
         <div class="container hero-flex">
             <div class="hero-content">
-                <h1>Hi, I'm <span class="highlight">Nacho</span></h1>
-                <h2 class="subtitle">Full-Stack Developer · Tech Enthusiast · Problem Solver</h2>
+                <h1>Hi, I'm <span class="highlight">Kelvin Nacho</span></h1>
+                <h2 class="subtitle">Full-Stack Developer | Modern Web Solutions</h2>
                 <p>
-                    I'm a passionate developer with a flair for crafting elegant, efficient, and delightful user experiences.
-                    My expertise bridges frontend and backend technologies, empowering me to transform complex ideas into intuitive, scalable digital solutions.
+                    I build robust, scalable web applications with a touch of creativity and keen problem-solving skills. 
+                    My passion is helping businesses and teams streamline their online presence with elegant code and thoughtful design.
                 </p>
                 <div class="cta-buttons">
                     <a href="#projects" class="btn btn-primary">View My Work</a>
                     <a href="#contact" class="btn btn-secondary">Contact Me</a>
                 </div>
+                <ul class="quick-social">
+                    <li><a href="https://github.com/Nacho-kelvin" aria-label="GitHub"><i class="fab fa-github"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/kelvin-nacho-0b179636a" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+                    <li><a href="https://x.com/NachoKellyy" aria-label="Twitter / X"><i class="fab fa-x-twitter"></i></a></li>
+                </ul>
             </div>
             <figure class="hero-image">
-                <img src="Image/profile.jpeg" alt="Portrait photograph of Kelvin Nacho" loading="lazy" width="280" height="280">
+                <img src="Image/profile.jpeg" alt="Portrait photograph of Kelvin Nacho" loading="lazy" width="280" height="280" class="prof-img">
             </figure>
         </div>
     </section>
-
+    <main id="main-content">
     <!-- About Section -->
     <section id="about" class="section about">
         <div class="container">
@@ -63,15 +89,13 @@
             </h2>
             <div class="about-content">
                 <div class="about-text">
-                    <h3>Who am I?</h3>
+                    <h3>Professional Profile</h3>
                     <p>
-                        I specialize in frontend (React, JavaScript, modern CSS) and backend (Node.js, Python, MongoDB, PostgreSQL) development, building robust APIs and seamless user experiences. My journey started at school with my first website, growing through study, bootcamps, self-teaching, and hands-on projects.
+                        I’m a driven full-stack engineer specializing in <b>modern JavaScript, Python, React, and API development</b>. 
+                        My approach combines scalable backend solutions with polished, user-centric interfaces.
                         <br><br>
-                        <strong>Beyond Code: </strong>
-                        I contribute to open-source, explore emerging tech, share learnings online, and enjoy mentoring, gaming, and adventures outdoors.
-                        <br><br>
-                        <strong>Let's connect! </strong>
-                        I’m always open to collaborations, freelance work, or insightful tech conversations. Find me by email or on my socials below.
+                        <strong>Beyond Coding:</strong> I contribute to open source, mentor upcoming developers, and explore gaming and tech adventures. 
+                        If you seek a reliable, creative collaborator for your project—reach out!
                     </p>
                     <dl class="personal-info">
                         <div>
@@ -114,9 +138,9 @@
                 <section class="skill-category" aria-label="Technical Skills">
                     <h3>Technical Skills</h3>
                     <div class="skill-item">
-                        <span class="skill-name">HTML/CSS</span>
-                        <div class="skill-bar" aria-label="HTML/CSS proficiency" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" role="progressbar">
-                            <div class="skill-level" data-level="90"></div>
+                        <span class="skill-name">HTML5 / CSS3</span>
+                        <div class="skill-bar" aria-label="HTML/CSS proficiency" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" role="progressbar">
+                            <div class="skill-level" data-level="95"></div>
                         </div>
                     </div>
                     <div class="skill-item">
@@ -126,14 +150,26 @@
                         </div>
                     </div>
                     <div class="skill-item">
-                        <span class="skill-name">JavaScript</span>
-                        <div class="skill-bar" aria-label="JavaScript proficiency" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" role="progressbar">
+                        <span class="skill-name">JavaScript (ES6+)</span>
+                        <div class="skill-bar" aria-label="JavaScript proficiency" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" role="progressbar">
+                            <div class="skill-level" data-level="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">React.js</span>
+                        <div class="skill-bar" aria-label="React proficiency" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" role="progressbar">
                             <div class="skill-level" data-level="85"></div>
                         </div>
                     </div>
                     <div class="skill-item">
-                        <span class="skill-name">React</span>
-                        <div class="skill-bar" aria-label="React proficiency" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" role="progressbar">
+                        <span class="skill-name">Node.js / Express</span>
+                        <div class="skill-bar" aria-label="Node.js proficiency" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" role="progressbar">
+                            <div class="skill-level" data-level="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">MongoDB / PostgreSQL</span>
+                        <div class="skill-bar" aria-label="Database proficiency" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" role="progressbar">
                             <div class="skill-level" data-level="80"></div>
                         </div>
                     </div>
@@ -147,15 +183,15 @@
                         </div>
                     </div>
                     <div class="skill-item">
-                        <span class="skill-name">Teamwork</span>
+                        <span class="skill-name">Teamwork & Collaboration</span>
                         <div class="skill-bar" aria-label="Teamwork proficiency" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" role="progressbar">
                             <div class="skill-level" data-level="90"></div>
                         </div>
                     </div>
                     <div class="skill-item">
                         <span class="skill-name">Problem Solving</span>
-                        <div class="skill-bar" aria-label="Problem Solving proficiency" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" role="progressbar">
-                            <div class="skill-level" data-level="85"></div>
+                        <div class="skill-bar" aria-label="Problem Solving proficiency" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" role="progressbar">
+                            <div class="skill-level" data-level="90"></div>
                         </div>
                     </div>
                 </section>
@@ -163,10 +199,42 @@
         </div>
     </section>
 
+    <!-- Services Section -->
+    <section id="services" class="section services">
+        <div class="container">
+            <h2 class="section-title">My <span class="highlight">Services</span></h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-code fa-2x"></i>
+                    <h3>Full-Stack Web Development</h3>
+                    <p>Custom, scalable web apps built using latest technologies. Everything from landing pages to complex dashboards and APIs.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-paint-brush fa-2x"></i>
+                    <h3>UI/UX Design</h3>
+                    <p>Clean, user-friendly interfaces and design systems optimized for accessibility and engagement.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-chart-line fa-2x"></i>
+                    <h3>Data Visualization</h3>
+                    <p>Interactive dashboards and data tools that turn information into insight.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-mobile-alt fa-2x"></i>
+                    <h3>Responsive & Mobile Apps</h3>
+                    <p>Websites and apps perform beautifully across devices, for seamless UX and conversion.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <!-- Projects Section -->
     <section id="projects" class="section projects" aria-labelledby="projects-title">
+        <svg viewBox="0 0 1440 320" class="section-divider divider-alt" aria-hidden="true">
+            <path fill="#ffb703" fill-opacity="1" d="M0,160L1440,256L1440,320L0,320Z"></path>
+        </svg>
         <div class="container">
-            <h2 id="projects-title" class="section-title">My <span class="highlight">Projects</span></h2>
+            <h2 id="projects-title" class="section-title">Featured <span class="highlight">Projects</span></h2>
             <div class="projects-filter" role="tablist" aria-label="Project Filters">
                 <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
                 <button class="filter-btn" data-filter="web" role="tab" aria-selected="false">Web Design</button>
@@ -181,7 +249,7 @@
                         <div class="project-overlay">
                             <h3>Web-Traffic-Visualizer</h3>
                             <p>App Development</p>
-                            <a href="https://github.com/Nacho-kelvin/Web-traffic-visualization.git" class="project-link" target="_blank" rel="noopener" aria-label="View Web Traffic Visualizer on GitHub"><i class="fas fa-link"></i></a>
+                            <a href="https://github.com/Nacho-kelvin/Web-traffic-visualization.git" class="project-link" target="_blank" rel="noopener" aria-label="View Web Traffic Visualizer on GitHub"><i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
                 </article>
@@ -192,7 +260,7 @@
                         <div class="project-overlay">
                             <h3>Kenya-Economic-Pulse</h3>
                             <p>App Development</p>
-                            <a href="https://github.com/Nacho-kelvin/Kenya-Economic-Pulse.git" class="project-link" target="_blank" rel="noopener" aria-label="View Kenya Economic Pulse on GitHub"><i class="fas fa-link"></i></a>
+                            <a href="https://github.com/Nacho-kelvin/Kenya-Economic-Pulse.git" class="project-link" target="_blank" rel="noopener" aria-label="View Kenya Economic Pulse on GitHub"><i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
                 </article>
@@ -203,22 +271,46 @@
                         <div class="project-overlay">
                             <h3>Chess Game</h3>
                             <p>App Development</p>
-                            <a href="https://github.com/Nacho-kelvin/Chess-game.git" class="project-link" target="_blank" rel="noopener" aria-label="View Chess Game project on GitHub"><i class="fas fa-link"></i></a>
+                            <a href="https://github.com/Nacho-kelvin/Chess-game.git" class="project-link" target="_blank" rel="noopener" aria-label="View Chess Game project on GitHub"><i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
                 </article>
+                <!-- More projects can be added -->
             </div>
         </div>
     </section>
 
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section testimonials">
+        <div class="container">
+            <h2 class="section-title">What <span class="highlight">Clients Say</span></h2>
+            <div class="testimonials-grid">
+                <blockquote class="testimonial">
+                    <p>“Kelvin is a consummate professional—reliable, communicative, and always delivering elegant solutions. Would gladly work with him again!”</p>
+                    <footer>
+                        <img src="Image/client1.jpg" alt="Client portrait" class="client-img" width="40">
+                        <cite><span class="client-name">Joyce W.</span>, Project Manager, Fintech Startup</cite>
+                    </footer>
+                </blockquote>
+                <blockquote class="testimonial">
+                    <p>“Exceeded expectations on a complex web app. The whole process was smooth, and the final product was outstanding.”</p>
+                    <footer>
+                        <img src="Image/client2.jpg" alt="Client portrait" class="client-img" width="40">
+                        <cite><span class="client-name">Brian O.</span>, Head of Product, DataCo</cite>
+                    </footer>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+    
     <!-- Contact Section -->
     <section id="contact" class="section contact" aria-labelledby="contact-title">
         <div class="container">
             <h2 id="contact-title" class="section-title">Get In <span class="highlight">Touch</span></h2>
             <div class="contact-content">
                 <div class="contact-info">
-                    <h3>Let's talk about everything!</h3>
-                    <p>Feel free to reach out for collaborations or just a friendly hello.</p>
+                    <h3>Let’s connect and build something impactful!</h3>
+                    <p>Use the form or reach out by email or phone. Available for freelance, collaboration, or consultation.</p>
                     <div class="contact-item" aria-label="Email">
                         <i class="fas fa-envelope"></i>
                         <a href="mailto:kelvinnatonia@gmail.com">kelvinnatonia@gmail.com</a>
@@ -234,7 +326,7 @@
                     <div class="social-links" aria-label="Social Media Links">
                         <a href="https://github.com/Nacho-kelvin" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
                         <a href="https://www.linkedin.com/in/kelvin-nacho-0b179636a" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://x.com/NachoKellyy" target="_blank" rel="noopener" aria-label="Twitter / X"><i class="fab fa-twitter"></i></a>
+                        <a href="https://x.com/NachoKellyy" target="_blank" rel="noopener" aria-label="Twitter / X"><i class="fab fa-x-twitter"></i></a>
                         <a href="https://www.instagram.com/n.e.c.h_" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
@@ -258,6 +350,10 @@
         </div>
     </section>
 
+    <!-- Back to Top Button -->
+    <button onclick="window.scrollTo({top:0,behavior:'smooth'})" class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+    </main>
     <!-- Footer -->
     <footer role="contentinfo">
         <div class="container">
@@ -278,7 +374,7 @@
         navLinks.classList.toggle('nav-open');
     });
 
-    // Simple project filter (optionally enhance further in script.js)
+    // Simple project filter
     const filters = document.querySelectorAll('.filter-btn');
     const projectItems = document.querySelectorAll('.project-item');
     filters.forEach(btn => {
@@ -323,13 +419,31 @@
         animateStats();
     }
 
-    // Optionally, handle contact form via AJAX (here: just show a status)
+    // Contact form AJAX simulation (show simple status only)
     document.querySelector('.contact-form')?.addEventListener('submit', function (e) {
         e.preventDefault();
         const status = this.querySelector('.form-status');
         status.textContent = "Thank you! Your message was submitted.";
         this.reset();
         setTimeout(() => status.textContent = "", 4000);
+    });
+
+    // Skip link support focus
+    document.querySelector('.skip-link').addEventListener('focus', function(){
+        this.classList.add('focus-visible');
+    });
+    document.querySelector('.skip-link').addEventListener('blur', function(){
+        this.classList.remove('focus-visible');
+    });
+
+    // Back-to-top button show/hide
+    const backToTop = document.querySelector('.back-to-top');
+    window.addEventListener('scroll', () => {
+        if(window.scrollY > 200){
+            backToTop.style.display = 'block';
+        } else {
+            backToTop.style.display = 'none';
+        }
     });
     </script>
     <script src="script.js" defer></script>
