@@ -3,94 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KELLY | Portfolio</title>
-    <meta name="description" content="Portfolio site for Kelvin Nacho, full-stack developer based in Nairobi, Kenya.">
+    <title>Kelvin Nacho | Full-Stack Developer Portfolio</title>
+    <meta name="description" content="Portfolio site of Kelvin Nacho, a passionate full-stack web developer based in Nairobi, Kenya. Explore skills, featured projects, and contact info.">
     <link rel="icon" href="favicon.ico">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preload" href="styles.css" as="style">
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="all">
+    <meta name="theme-color" content="#101e36"/>
 </head>
 <body>
     <!-- Navigation -->
-    <nav id="navbar">
-        <div class="container">
-            <a href="#home" class="logo">KELVIN NACHO</a>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+    <header>
+        <nav id="navbar" aria-label="Site Navigation">
+            <div class="container">
+                <a href="#home" class="logo" aria-label="Kelvin Nacho homepage">KELVIN NACHO</a>
+                <button class="nav-toggle" aria-label="Open Menu" aria-controls="nav-links" aria-expanded="false">
+                    <span class="hamburger-bar"></span>
+                    <span class="hamburger-bar"></span>
+                    <span class="hamburger-bar"></span>
+                </button>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
+    <section id="home" class="hero" tabindex="-1">
+        <div class="container hero-flex">
             <div class="hero-content">
                 <h1>Hi, I'm <span class="highlight">Nacho</span></h1>
-                <h2>Full-Stack Developer | Tech Enthusiast | Problem Solver</h2>
-                <p>I'm a passionate full-stack Developer with a love for creating elegant, efficient, 
-                    and user-friendly digital solutions. With a strong foundation in both frontend and backend technologies,
-                    I thrive on turning complex problems into simple, beautiful, and functional applications.</p>
+                <h2 class="subtitle">Full-Stack Developer · Tech Enthusiast · Problem Solver</h2>
+                <p>
+                    I'm a passionate developer with a flair for crafting elegant, efficient, and delightful user experiences.
+                    My expertise bridges frontend and backend technologies, empowering me to transform complex ideas into intuitive, scalable digital solutions.
+                </p>
                 <div class="cta-buttons">
                     <a href="#projects" class="btn btn-primary">View My Work</a>
                     <a href="#contact" class="btn btn-secondary">Contact Me</a>
                 </div>
             </div>
-            <div class="hero-image">
-                <img src="Image/profile.jpeg" alt="Kelvin Nacho portrait">
-            </div>
+            <figure class="hero-image">
+                <img src="Image/profile.jpeg" alt="Portrait photograph of Kelvin Nacho" loading="lazy" width="280" height="280">
+            </figure>
         </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="section about">
         <div class="container">
-            <h2 class="section-title">About <span class="highlight">Me</span></h2>
+            <h2 class="section-title">
+                About <span class="highlight">Me</span>
+            </h2>
             <div class="about-content">
                 <div class="about-text">
                     <h3>Who am I?</h3>
-                    <p>I specialize in frontend development (React, JavaScript, modern CSS frameworks) and backend development
-                        (Node.js, Python, databases like MongoDB and PostgreSQL), building seamless full-stack integrations and strong APIs. 
-                        My journey began when I built my first website at school, and since then I've developed through formal education, bootcamps, self-learning, and real-world initiatives.
+                    <p>
+                        I specialize in frontend (React, JavaScript, modern CSS) and backend (Node.js, Python, MongoDB, PostgreSQL) development, building robust APIs and seamless user experiences. My journey started at school with my first website, growing through study, bootcamps, self-teaching, and hands-on projects.
                         <br><br>
-                        <strong>Beyond Code</strong><br>
-                        When not coding, I contribute to open-source projects, explore new technology trends, share knowledge on social media, and recharge by going outdoors, gaming, and mentoring others.
+                        <strong>Beyond Code: </strong>
+                        I contribute to open-source, explore emerging tech, share learnings online, and enjoy mentoring, gaming, and adventures outdoors.
                         <br><br>
-                        <strong>Let's connect!</strong> I’m always up for collaboration, freelance opportunities, or even a great tech chat. Contact me by email or find me on Instagram, LinkedIn, GitHub, or Twitter.
+                        <strong>Let's connect! </strong>
+                        I’m always open to collaborations, freelance work, or insightful tech conversations. Find me by email or on my socials below.
                     </p>
-                    <div class="personal-info">
+                    <dl class="personal-info">
                         <div>
-                            <span>Name:</span>
-                            <p>KELVIN NATONIA NACHO</p>
+                            <dt>Name:</dt>
+                            <dd>KELVIN NATONIA NACHO</dd>
                         </div>
                         <div>
-                            <span>Email:</span>
-                            <p>kelvinnatonia@gmail.com</p>
+                            <dt>Email:</dt>
+                            <dd><a href="mailto:kelvinnatonia@gmail.com">kelvinnatonia@gmail.com</a></dd>
                         </div>
                         <div>
-                            <span>From:</span>
-                            <p>NAIROBI, KENYA</p>
+                            <dt>From:</dt>
+                            <dd>Nairobi, Kenya</dd>
                         </div>
-                    </div>
+                    </dl>
                 </div>
-                <div class="about-stats">
-                    <div class="stat-item">
-                        <span class="number" data-count="5">0</span>+
+                <div class="about-stats" aria-label="Summary of Experience">
+                    <div class="stat-item" role="status">
+                        <span class="number" data-count="5">5</span>+
                         <span class="text">Years Experience</span>
                     </div>
-                    <div class="stat-item">
-                        <span class="number" data-count="20">0</span>+
-                        <span class="text">Projects Completed</span>
+                    <div class="stat-item" role="status">
+                        <span class="number" data-count="20">20</span>+
+                        <span class="text">Projects Delivered</span>
                     </div>
-                    <div class="stat-item">
-                        <span class="number" data-count="15">0</span>+
+                    <div class="stat-item" role="status">
+                        <span class="number" data-count="15">15</span>+
                         <span class="text">Happy Clients</span>
                     </div>
                 </div>
@@ -99,164 +107,231 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="section skills">
+    <section id="skills" class="section skills" aria-labelledby="skills-title">
         <div class="container">
-            <h2 class="section-title">My <span class="highlight">Skills</span></h2>
+            <h2 id="skills-title" class="section-title">My <span class="highlight">Skills</span></h2>
             <div class="skills-container">
-                <div class="skill-category">
+                <section class="skill-category" aria-label="Technical Skills">
                     <h3>Technical Skills</h3>
                     <div class="skill-item">
                         <span class="skill-name">HTML/CSS</span>
-                        <div class="skill-bar">
+                        <div class="skill-bar" aria-label="HTML/CSS proficiency" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" role="progressbar">
                             <div class="skill-level" data-level="90"></div>
                         </div>
                     </div>
                     <div class="skill-item">
                         <span class="skill-name">Python</span>
-                        <div class="skill-bar">
+                        <div class="skill-bar" aria-label="Python proficiency" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" role="progressbar">
                             <div class="skill-level" data-level="90"></div>
                         </div>
                     </div>
                     <div class="skill-item">
                         <span class="skill-name">JavaScript</span>
-                        <div class="skill-bar">
+                        <div class="skill-bar" aria-label="JavaScript proficiency" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" role="progressbar">
                             <div class="skill-level" data-level="85"></div>
                         </div>
                     </div>
                     <div class="skill-item">
                         <span class="skill-name">React</span>
-                        <div class="skill-bar">
+                        <div class="skill-bar" aria-label="React proficiency" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" role="progressbar">
                             <div class="skill-level" data-level="80"></div>
                         </div>
                     </div>
-                </div>
-                <div class="skill-category">
+                </section>
+                <section class="skill-category" aria-label="Professional Skills">
                     <h3>Professional Skills</h3>
                     <div class="skill-item">
                         <span class="skill-name">Communication</span>
-                        <div class="skill-bar">
+                        <div class="skill-bar" aria-label="Communication proficiency" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" role="progressbar">
                             <div class="skill-level" data-level="95"></div>
                         </div>
                     </div>
                     <div class="skill-item">
                         <span class="skill-name">Teamwork</span>
-                        <div class="skill-bar">
+                        <div class="skill-bar" aria-label="Teamwork proficiency" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" role="progressbar">
                             <div class="skill-level" data-level="90"></div>
                         </div>
                     </div>
                     <div class="skill-item">
                         <span class="skill-name">Problem Solving</span>
-                        <div class="skill-bar">
+                        <div class="skill-bar" aria-label="Problem Solving proficiency" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" role="progressbar">
                             <div class="skill-level" data-level="85"></div>
                         </div>
                     </div>
-                </div>
+                </section>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="section projects">
+    <section id="projects" class="section projects" aria-labelledby="projects-title">
         <div class="container">
-            <h2 class="section-title">My <span class="highlight">Projects</span></h2>
-            <div class="projects-filter">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="web">Web Design</button>
-                <button class="filter-btn" data-filter="app">App Development</button>
-                <button class="filter-btn" data-filter="graphic">Graphic Design</button>
+            <h2 id="projects-title" class="section-title">My <span class="highlight">Projects</span></h2>
+            <div class="projects-filter" role="tablist" aria-label="Project Filters">
+                <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+                <button class="filter-btn" data-filter="web" role="tab" aria-selected="false">Web Design</button>
+                <button class="filter-btn" data-filter="app" role="tab" aria-selected="false">App Development</button>
+                <button class="filter-btn" data-filter="graphic" role="tab" aria-selected="false">Graphic Design</button>
             </div>
             <div class="projects-grid">
                 <!-- Project 1 -->
-                <div class="project-item" data-category="app">
+                <article class="project-item" data-category="app">
                     <div class="project-img">
-                        <img src="Image/project1.png" alt="Web Traffic Visualizer app">
+                        <img src="Image/project1.png" alt="Screenshot of Web Traffic Visualizer app" loading="lazy" width="350" height="240">
                         <div class="project-overlay">
-                            <h3>Web-traffic-visualizer</h3>
+                            <h3>Web-Traffic-Visualizer</h3>
                             <p>App Development</p>
-                            <a href="https://github.com/Nacho-kelvin/Web-traffic-visualization.git" class="project-link"><i class="fas fa-link"></i></a>
+                            <a href="https://github.com/Nacho-kelvin/Web-traffic-visualization.git" class="project-link" target="_blank" rel="noopener" aria-label="View Web Traffic Visualizer on GitHub"><i class="fas fa-link"></i></a>
                         </div>
                     </div>
-                </div>
+                </article>
                 <!-- Project 2 -->
-                <div class="project-item" data-category="app">
+                <article class="project-item" data-category="app">
                     <div class="project-img">
-                        <img src="Image/project2.png" alt="Kenya Economic Pulse app">
+                        <img src="Image/project2.png" alt="Screenshot of Kenya Economic Pulse app" loading="lazy" width="350" height="240">
                         <div class="project-overlay">
                             <h3>Kenya-Economic-Pulse</h3>
                             <p>App Development</p>
-                            <a href="https://github.com/Nacho-kelvin/Kenya-Economic-Pulse.git" class="project-link"><i class="fas fa-link"></i></a>
+                            <a href="https://github.com/Nacho-kelvin/Kenya-Economic-Pulse.git" class="project-link" target="_blank" rel="noopener" aria-label="View Kenya Economic Pulse on GitHub"><i class="fas fa-link"></i></a>
                         </div>
                     </div>
-                </div>
+                </article>
                 <!-- Project 3 -->
-                <div class="project-item" data-category="app">
+                <article class="project-item" data-category="app">
                     <div class="project-img">
-                        <img src="Image/project3.png" alt="Chess Game app">
+                        <img src="Image/project3.png" alt="Screenshot of Chess Game app" loading="lazy" width="350" height="240">
                         <div class="project-overlay">
                             <h3>Chess Game</h3>
                             <p>App Development</p>
-                            <a href="https://github.com/Nacho-kelvin/Chess-game.git" class="project-link"><i class="fas fa-link"></i></a>
+                            <a href="https://github.com/Nacho-kelvin/Chess-game.git" class="project-link" target="_blank" rel="noopener" aria-label="View Chess Game project on GitHub"><i class="fas fa-link"></i></a>
                         </div>
                     </div>
-                </div>
+                </article>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section contact">
+    <section id="contact" class="section contact" aria-labelledby="contact-title">
         <div class="container">
-            <h2 class="section-title">Get In <span class="highlight">Touch</span></h2>
+            <h2 id="contact-title" class="section-title">Get In <span class="highlight">Touch</span></h2>
             <div class="contact-content">
                 <div class="contact-info">
                     <h3>Let's talk about everything!</h3>
                     <p>Feel free to reach out for collaborations or just a friendly hello.</p>
-                    <div class="contact-item">
+                    <div class="contact-item" aria-label="Email">
                         <i class="fas fa-envelope"></i>
-                        <span>kelvinnatonia@gmail.com</span>
+                        <a href="mailto:kelvinnatonia@gmail.com">kelvinnatonia@gmail.com</a>
                     </div>
-                    <div class="contact-item">
+                    <div class="contact-item" aria-label="Phone">
                         <i class="fas fa-phone"></i>
-                        <span>0714188409 / 0750455048</span>
+                        <a href="tel:+254714188409">+254 714 188 409</a> / <a href="tel:+254750455048">+254 750 455 048</a>
                     </div>
-                    <div class="contact-item">
+                    <div class="contact-item" aria-label="Location">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>NAIROBI, KENYA</span>
+                        <span>Nairobi, Kenya</span>
                     </div>
-                    <div class="social-links">
-                        <a href="https://github.com/Nacho-kelvin"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/kelvin-nacho-0b179636a"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://x.com/NachoKellyy"><i class="fab fa-twitter"></i></a>
-                        <a href="https://www.instagram.com/n.e.c.h_"><i class="fab fa-instagram"></i></a>
+                    <div class="social-links" aria-label="Social Media Links">
+                        <a href="https://github.com/Nacho-kelvin" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/kelvin-nacho-0b179636a" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://x.com/NachoKellyy" target="_blank" rel="noopener" aria-label="Twitter / X"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/n.e.c.h_" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
-                <form class="contact-form" autocomplete="off">
+                <form class="contact-form" autocomplete="off" name="contact-form">
                     <div class="form-group">
-                        <input type="text" placeholder="Your Name" required>
+                        <input type="text" name="name" placeholder="Your Name" required aria-label="Your Name">
                     </div>
                     <div class="form-group">
-                        <input type="email" placeholder="Your Email" required>
+                        <input type="email" name="email" placeholder="Your Email" required aria-label="Your Email">
                     </div>
                     <div class="form-group">
-                        <input type="text" placeholder="Subject">
+                        <input type="text" name="subject" placeholder="Subject" aria-label="Subject">
                     </div>
                     <div class="form-group">
-                        <textarea placeholder="Your Message" required></textarea>
+                        <textarea name="message" placeholder="Your Message" required aria-label="Your Message"></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Send Message</button>
+                    <span class="form-status" aria-live="polite"></span>
                 </form>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer role="contentinfo">
         <div class="container">
-            <p>&copy; <span id="year"></span> kelly. All Rights Reserved.</p>
+            <p>&copy; <span id="year"></span> Kelvin Nacho. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+    // Dynamic year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Responsive navigation menu
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+    navToggle?.addEventListener('click', () => {
+        const expanded = navToggle.getAttribute('aria-expanded') === 'true' || false;
+        navToggle.setAttribute('aria-expanded', !expanded);
+        navLinks.classList.toggle('nav-open');
+    });
+
+    // Simple project filter (optionally enhance further in script.js)
+    const filters = document.querySelectorAll('.filter-btn');
+    const projectItems = document.querySelectorAll('.project-item');
+    filters.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filters.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const filter = btn.getAttribute('data-filter');
+            projectItems.forEach(item => {
+                if (filter === "all" || item.dataset.category === filter) {
+                    item.style.display = "";
+                } else {
+                    item.style.display = "none";
+                }
+            });
+            // For accessibility: update aria-selected
+            filters.forEach(b => b.setAttribute('aria-selected', 'false'));
+            btn.setAttribute('aria-selected', 'true');
+        });
+    });
+
+    // Animate stats (years/projects/clients)
+    function animateStats() {
+        document.querySelectorAll('.number[data-count]').forEach(el => {
+            const target = +el.getAttribute('data-count');
+            if (isNaN(target)) return;
+            let count = 0;
+            const duration = 1000;
+            const increment = Math.ceil(target / (duration / 20));
+            const update = () => {
+                count += increment;
+                if (count < target) {
+                    el.textContent = count;
+                    setTimeout(update, 20);
+                } else {
+                    el.textContent = target;
+                }
+            };
+            update();
+        });
+    }
+    if(window.matchMedia("(min-width: 600px)").matches){
+        animateStats();
+    }
+
+    // Optionally, handle contact form via AJAX (here: just show a status)
+    document.querySelector('.contact-form')?.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const status = this.querySelector('.form-status');
+        status.textContent = "Thank you! Your message was submitted.";
+        this.reset();
+        setTimeout(() => status.textContent = "", 4000);
+    });
+    </script>
+    <script src="script.js" defer></script>
 </body>
 </html>
-
